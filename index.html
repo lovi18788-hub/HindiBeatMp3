@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hindi Beat MP3</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:#0d0d0d;
+      color:white;
+      min-height:100vh;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .bg{
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:linear-gradient(45deg,#ff0066,#7d2ae8);
+      filter:blur(180px);
+      opacity:0.25;
+      border-radius:50%;
+      top:-100px;
+      left:-100px;
+    }
+
+    .bg2{
+      position:absolute;
+      width:500px;
+      height:500px;
+      background:linear-gradient(45deg,#00c6ff,#0072ff);
+      filter:blur(180px);
+      opacity:0.2;
+      border-radius:50%;
+      bottom:-120px;
+      right:-100px;
+    }
+
+    .container{
+      width:100%;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+      position:relative;
+      z-index:10;
+    }
+
+    .card{
+      width:100%;
+      max-width:700px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(15px);
+      border-radius:25px;
+      padding:50px;
+      text-align:center;
+      box-shadow:0 10px 40px rgba(0,0,0,0.5);
+    }
+
+    .logo{
+      font-size:42px;
+      font-weight:700;
+      margin-bottom:10px;
+      background:linear-gradient(to right,#ff4d6d,#7d2ae8);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .subtitle{
+      color:#bdbdbd;
+      font-size:16px;
+      margin-bottom:40px;
+    }
+
+    .input-box{
+      display:flex;
+      gap:12px;
+      margin-bottom:25px;
+      flex-wrap:wrap;
+    }
+
+    .input-box input{
+      flex:1;
+      min-width:200px;
+      padding:18px;
+      border:none;
+      outline:none;
+      border-radius:14px;
+      background:#151515;
+      color:white;
+      font-size:15px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .input-box button{
+      padding:18px 28px;
+      border:none;
+      border-radius:14px;
+      background:linear-gradient(45deg,#ff0066,#7d2ae8);
+      color:white;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+      font-size:15px;
+    }
+
+    .input-box button:hover{
+      transform:scale(1.05);
+      opacity:0.9;
+    }
+
+    .features{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-top:30px;
+    }
+
+    .feature{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:15px 20px;
+      border-radius:14px;
+      color:#d0d0d0;
+      font-size:14px;
+    }
+
+    .footer{
+      margin-top:35px;
+      color:#7a7a7a;
+      font-size:13px;
+    }
+
+    @media(max-width:700px){
+      .card{
+        padding:35px 25px;
+      }
+
+      .logo{
+        font-size:34px;
+      }
+
+      .input-box{
+        flex-direction:column;
+      }
+
+      .input-box button{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg"></div>
+  <div class="bg2"></div>
+
+  <div class="container">
+    <div class="card">
+
+      <div class="logo">Hindi Beat MP3</div>
+
+      <div class="subtitle">
+        Convert YouTube videos into high quality MP3 instantly.
+      </div>
+
+      <div class="input-box">
+        <input 
+          type="text" 
+          placeholder="Paste YouTube video link here..."
+          id="youtubeLink"
+        />
+
+        <button onclick="convertMP3()">
+          Convert MP3
+        </button>
+      </div>
+
+      <div class="features">
+        <div class="feature">Fast Conversion</div>
+        <div class="feature">320kbps Audio</div>
+        <div class="feature">Unlimited Downloads</div>
+      </div>
+
+      <div class="footer">
+        © 2026 Hindi Beat MP3 — Music Converter
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function convertMP3() {
+      const link = document.getElementById("youtubeLink").value;
+
+      if(link === ""){
+        alert("Please paste a YouTube link.");
+      } else {
+        alert("Your MP3 conversion has started!");
+      }
+    }
+  </script>
+
+</body>
+</html>
